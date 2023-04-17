@@ -1,7 +1,10 @@
 package rincom.example.SpringPostgresSql;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -17,4 +20,15 @@ public class CharacterController {
         return characterDtos;
 
     }
+
+    public CharacterDto getCharacterById(Integer id) {
+        Character character = characterService.getCharacterById(id);
+        return new CharacterDto(character);
+    }
+
+    public CharacterDto addCharacter(Character characterDto) {
+        Character character = characterService.newCharacter(characterDto);
+        return new CharacterDto(character);
+    }
+
 }
