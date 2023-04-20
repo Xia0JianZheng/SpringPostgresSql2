@@ -36,9 +36,7 @@ public class CharacterController {
         characterService.deleteCharacterById(id);
     }
 
-    public void deleteCharacterById2(Integer id) {
-        characterService.deleteCharacterById(id);
-    }
+
 
 
 }
