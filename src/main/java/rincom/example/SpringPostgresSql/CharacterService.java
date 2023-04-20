@@ -26,4 +26,10 @@ public class CharacterService {
         return repository.save(character);
 
     }
+
+    public void deleteCharacterById(Integer id) {
+        repository.deleteById(id);
+    }
+
+
 }

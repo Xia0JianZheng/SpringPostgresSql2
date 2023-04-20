@@ -1,6 +1,7 @@
 package rincom.example.SpringPostgresSql;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,5 +31,14 @@ public class CharacterController {
         Character character = characterService.newCharacter(characterDto);
         return new CharacterDto(character);
     }
+
+    public void deleteCharacterById(Integer id) {
+        characterService.deleteCharacterById(id);
+    }
+
+    public void deleteCharacterById2(Integer id) {
+        characterService.deleteCharacterById(id);
+    }
+
 
 }
